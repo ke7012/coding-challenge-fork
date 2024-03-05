@@ -63,12 +63,12 @@ function TodoList({ todos, toggleTodo, deleteTodo }: TodoListProps) {
   };
 
   return (
-    <div className="flex max-w-xl">
-      <div className="w-1/2 float-left">
+    <div className="flex max-w-[500px]">
+      <div className="w-1/2 float-left min-w-[250px]">
         <h2 className="text-center m-2 text-lg font-bold">To Do</h2>
         {renderTodo()}
       </div>
-      <div className="w-1/2 float-right">
+      <div className="w-1/2 float-right min-w-[250px]">
         <h2 className="text-center m-2 text-lg font-bold">Completed</h2>
         {renderCompleted()}
       </div>

@@ -1,6 +1,7 @@
+import React from "react";
 import { MdDelete } from "react-icons/md";
 import { FaRegCircleCheck } from "react-icons/fa6";
-import React from "react";
+import { TiDeleteOutline } from "react-icons/ti";
 
 interface TodoItemProps {
   todo: {
@@ -13,26 +14,41 @@ interface TodoItemProps {
   deleteTodo: (id: number) => void;
 }
 
-function TodoItem({ todo, toggleTodo, deleteTodo }: TodoItemProps) {
+const TodoItem = ({ todo, toggleTodo, deleteTodo }: TodoItemProps) => {
+  const markUnmark = () => {
+    if (todo.completed) {
+      return (
+        <TiDeleteOutline
+          className="scale-150 cursor-pointer"
+          onClick={() => toggleTodo(todo.id)}
+        />
+      );
+    } else {
+      return (
+        <FaRegCircleCheck
+          className="scale-125 cursor-pointer"
+          onClick={() => toggleTodo(todo.id)}
+        />
+      );
+    }
+  };
+
   return (
     <div
-      className={`m-3 p-2 break-words rounded-lg ${
+      className={`m-2 p-2 break-words rounded-lg max-w-full ${
         todo.completed ? "line-through bg-correct-green" : " bg-wrong-red"
       }`}
     >
-      <p className="font-light ">{todo.text}</p>
-      <div className="flex p-2 flex-row-reverse">
+      <p className="font-light mx-2">{todo.text}</p>
+      <div className="flex p-2 justify-between">
         <MdDelete
-          className="mx-1 scale-125 cursor-pointer"
+          className="hover:bg-opacity-10 scale-125 cursor-pointer"
           onClick={() => deleteTodo(todo.id)}
         />
-        <FaRegCircleCheck
-          className="mx-1 scale-125 cursor-pointer"
-          onClick={() => toggleTodo(todo.id)}
-        />
+        {markUnmark()}
       </div>
     </div>
   );
-}
+};
 
 export default TodoItem;
