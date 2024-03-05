@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Title from './components/Title'
+import React, { useState } from "react";
+import Title from "./components/Title";
+import TodoList from "./components/TodoList";
+import AddTodo from "./components/AddTodo";
 
-function App() {
-  const [count, setCount] = useState(0)
+// interface Todo{
+//   id: number;
+//   text: string;
+//   completed: boolean;
+// }
 
+function App(){
+  const [todos, setTodos] = useState([]);
 
-  const handleClick = () => {
-    console.log('clicked')
-    setCount((c) => c + 1)
-  }
-  
+  const toggleTodo = (id) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
+  const deleteTodo = (id) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+  };
+
+  const addTodo = (text) => {
+    setTodos((prevTodos) => [
+      ...prevTodos,
+      { id: Date.now(), text, completed: false },
+    ]);
+  };
+
   return (
-    <>
-      <div className='flex'>
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-          <img src={reactLogo} className="logo react" alt="React logo" />
-      </div>
-      <Title title={'React App'} description={"This is a simple React App."} />
-      <div className="">
-        <button className='my-2' onClick={handleClick}>
-          count is {count}
-        </button>
-        <p className='my-2'>
-          Edit <code>src/App.jsx</code> and save to see your changes
-        </p>
-      </div>
-    </>
-  )
-}
+    <div>
+      <Title Title={"To Do List"}/>
+      <AddTodo addTodo={addTodo} />
+      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+    </div>
+  );
+};
 
-export default App
+export default App;
