@@ -114,9 +114,44 @@ function TodoList({ todos, toggleTodo, deleteTodo }: TodoListProps) {
     }
   };
 
+  /* Changes filter based on toggle bar */
+  const changeFilter = (kekw: string) => {
+    setFilter(kekw);
+  };
+
   return (
     <>
-      <div className="flex justify-center items-center p-2 m-2">
+      <div className="flex justify-center items-center p-2">
+        <div className="flex justify-around items-center rounded-lg p-2 mb-4 w-[76%] h-10 bg-[#3b3b3b]">
+          <span
+            className={`px-4 py-0.5 rounded-lg ${
+              filter === "all" ? "bg-mono-blue font-semibold" : ""
+            } cursor-pointer transition-[1s] hover:font-semibold `}
+            onClick={() => changeFilter("all")}
+          >
+            All
+          </span>
+
+          <span
+            className={`px-4 py-0.5 rounded-lg ${
+              filter === "open" ? "bg-mono-blue font-semibold" : ""
+            } cursor-pointer transition-[1s] hover:font-semibold `}
+            onClick={() => changeFilter("open")}
+          >
+            Open
+          </span>
+          <span
+            className={`px-4 py-0.5 rounded-lg ${
+              filter === "completed" ? "bg-mono-blue font-semibold" : ""
+            } cursor-pointer transition-[1s] hover:font-semibold `}
+            onClick={() => changeFilter("completed")}
+          >
+            Completed
+          </span>
+        </div>
+      </div>
+      {/* Used a dropdown Menu before but I think the above one looks better */}
+      {/* <div className="flex justify-center items-center p-2 m-2">
         <label htmlFor="filter">Show </label>
         <select
           className="rounded-lg ml-2 p-2 lg"
@@ -128,7 +163,7 @@ function TodoList({ todos, toggleTodo, deleteTodo }: TodoListProps) {
           <option value="open">Open</option>
           <option value="completed">Completed</option>
         </select>
-      </div>
+      </div> */}
       {filterTodo()}
     </>
   );
