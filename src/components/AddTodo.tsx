@@ -29,18 +29,26 @@ function AddTodo({ addTodo }: AddTodoProps) {
 
   return (
     <div className="flex justify-center items-center">
-      <form onSubmit={handleSubmit} className=" p-2 m-2 max-w-sm">
-        <input
-          type="text"
-          placeholder="Enter a To Do task"
-          className="rounded-lg p-2"
-          value={input}
-          onChange={handleChange}
-        />
-        <button className="rounded-lg p-2" type="submit">
-          Add Todo
-        </button>
-      </form>
+      <div className="w-[12%] pr-3">
+        <hr />
+      </div>
+      <div>
+        <form onSubmit={handleSubmit} className="p-2 ">
+          <input
+            type="text"
+            placeholder="Enter a To Do task"
+            className="inputfield rounded-lg px-3 py-2"
+            value={input}
+            onChange={handleChange}
+          />
+          <button className="rounded-lg p-2" type="submit">
+            Add
+          </button>
+        </form>
+      </div>
+      <div className="w-[12%] pl-3">
+        <hr />
+      </div>
     </div>
   );
 }
