@@ -9,9 +9,9 @@ Tailwind documentation: https://tailwindcss.com/docs/margin
 
 # Mono Task - Your simple and modern To Do List
 
-This React app project is a simple, modern flat looking To Do List.
-Users can add To Do tasks, mark them as completed and delete them.
-It displays two columns of _yet To Do Tasks_ and _Completed Tasks_.
+This Vite React app project is a simple, modern flat themed To Do List.
+Users can add To Do tasks, mark/unmark them as completed and delete them.
+The user can filter the tasks for _Completed_, _Open_ and _All_ tasks.
 
 ## Setup
 
@@ -32,3 +32,14 @@ npm run dev
 
 # Open your browser and go to http://localhost:3000
 ```
+
+## Review
+This was done in a span of 1 week and with close to 0 experience in React, Git and Typescript. It was both very fun and challenging.
+Further Improvements and Features that crossed my mind:
+- Toggle between Light/Dark Mode
+- Mobile View
+- Search Function to find tasks
+- Add smoother transitions and animations for a better user experience
+- Adding Images to tasks
+- Login Feature to save data online and enable synchronisation
+- and many more possibilites...
