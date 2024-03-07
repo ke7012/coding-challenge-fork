@@ -12,6 +12,7 @@ import AddTodo from "./components/AddTodo";
 function App(){
   const [todos, setTodos] = useState([]);
 
+  /* Function to set the completed status of a Todoitem */
   const toggleTodo = (id) => {
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
@@ -20,10 +21,12 @@ function App(){
     );
   };
 
+  /* Function to delete a Todoitem */
   const deleteTodo = (id) => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
+  /* Funciton to add a TodoItem to the list of TodoItems */
   const addTodo = (text) => {
     setTodos((prevTodos) => [
       ...prevTodos,
@@ -31,9 +34,10 @@ function App(){
     ]);
   };
 
+  /* Pass functions to the TodoList and AddTodo Component */
   return (
     <div>
-      <Title Title={"To Do List"}/>
+      <Title Title={"Mono Task"}/>
       <AddTodo addTodo={addTodo} />
       <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>

@@ -1,37 +1,31 @@
+import React from "react";
 import { useState } from "react";
+
+/**
+ *  Component for adding new todo tasks.
+ *  Allows to input a task, submit the task and add it to the list of todos.
+ */
 
 interface AddTodoProps {
   addTodo: (input: string) => void;
 }
 
-const AddTodo = ({ addTodo }: AddTodoProps) => {
+function AddTodo({ addTodo }: AddTodoProps) {
+  /* State to store the input value */
   const [input, setInput] = useState("");
-  // const [searchWord, setSearchWord] = useState("");
 
+  /* Function to handle input change */
   const handleChange = (event: any) => {
     setInput(event.target.value);
   };
 
+  /* Function to handle form submission */
   const handleSubmit = (event: any) => {
     event.preventDefault(); // Stops Refreshing the Page
-    if (input.length === 0) return;
-    addTodo(input);
-    setInput("");
+    if (input.length === 0) return; // Do nothing for empty input
+    addTodo(input); // Add todo task using addTodo function
+    setInput(""); // Clear input
   };
-
-  // const handleSearch = (event: any) => {
-  //   setSearchWord(event.target.value);
-  // };
-
-  // const handleSearchSubmit = (e: any) => {
-  //   e.preventDefault(); // Stops Refreshing the Page¨
-  //   console.log(`Searched for ${e.target.value}`);
-  //   setSearchWord("");
-  // };
-
-  // const filteredTodo = todos.filter((todo) =>
-  //   todo.text.toLowerCase().includes(searchTerm.toLowerCase())
-  // );
 
   return (
     <div className="flex justify-center items-center">
@@ -49,6 +43,6 @@ const AddTodo = ({ addTodo }: AddTodoProps) => {
       </form>
     </div>
   );
-};
+}
 
 export default AddTodo;

@@ -3,6 +3,10 @@ import { MdDelete } from "react-icons/md";
 import { FaRegCircleCheck } from "react-icons/fa6";
 import { TiDeleteOutline } from "react-icons/ti";
 
+/**
+ * Component that displays the todo tasks with mark and delete functions.
+ */
+
 interface TodoItemProps {
   todo: {
     id: number;
@@ -15,6 +19,7 @@ interface TodoItemProps {
 }
 
 const TodoItem = ({ todo, toggleTodo, deleteTodo }: TodoItemProps) => {
+  /* Changes the icon for mark as completed to an unmark icon for completed item */
   const markUnmark = () => {
     if (todo.completed) {
       return (
@@ -33,6 +38,7 @@ const TodoItem = ({ todo, toggleTodo, deleteTodo }: TodoItemProps) => {
     }
   };
 
+  /* Color and Style indications for To Do tasks and Completed once */
   return (
     <div
       className={`m-2 p-2 break-words rounded-lg max-w-full ${
