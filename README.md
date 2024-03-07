@@ -7,21 +7,28 @@
 React documentation: Learn React https://react.dev/learn
 Tailwind documentation: https://tailwindcss.com/docs/margin
 
+# Mono Task - Your simple and modern To Do List
+
+This React app project is a simple, modern flat looking To Do List.
+Users can add To Do tasks, mark them as completed and delete them.
+It displays two columns of _yet To Do Tasks_ and _Completed Tasks_.
+
 ## Setup
 
-Install Node and npm via https://nodejs.org/en/download
+Install Node and npm via https://nodejs.org/en/download.
 
 ```bash
 # Install Node.js
 
 # Install the packages for this repository
 npm install
+npm install react-icons --save
 ```
 
 ## Run
 
 ```bash
-npm start
+npm run dev
 
 # Open your browser and go to http://localhost:3000
 ```
