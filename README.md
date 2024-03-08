@@ -24,7 +24,6 @@ Install Node and npm via https://nodejs.org/en/download.
 
 # Install the packages for this repository
 npm install
-npm install react-icons --save
 ```
 
 ## Run
