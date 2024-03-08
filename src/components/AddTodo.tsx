@@ -29,7 +29,7 @@ function AddTodo({ addTodo }: AddTodoProps) {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="w-[12%] pr-3">
+      <div className="w-[10%] pr-3">
         <hr />
       </div>
       <div>
@@ -37,16 +37,16 @@ function AddTodo({ addTodo }: AddTodoProps) {
           <input
             type="text"
             placeholder="Enter a To Do task"
-            className="inputfield rounded-lg px-3 py-2"
+            className="inputfield rounded-full px-4 py-2"
             value={input}
             onChange={handleChange}
           />
-          <button className="rounded-lg p-2" type="submit">
+          <button className="rounded-full px-4 py-2" type="submit">
             Add
           </button>
         </form>
       </div>
-      <div className="w-[12%] pl-3">
+      <div className="w-[10%] pl-3">
         <hr />
       </div>
     </div>

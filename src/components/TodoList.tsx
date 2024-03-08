@@ -122,9 +122,9 @@ function TodoList({ todos, toggleTodo, deleteTodo }: TodoListProps) {
   return (
     <>
       <div className="flex justify-center items-center p-2">
-        <div className="flex justify-around items-center rounded-lg p-2 mb-4 w-[76%] h-10 bg-[#3b3b3b]">
+        <div className="flex justify-between items-center rounded-full p-2 mb-4 w-[76%] h-10 bg-[#3b3b3b]">
           <span
-            className={`px-4 py-0.5 rounded-lg ${
+            className={`px-4 py-0.5 rounded-full ${
               filter === "all" ? "bg-mono-blue font-semibold" : ""
             } cursor-pointer transition-[1s] hover:font-semibold `}
             onClick={() => changeFilter("all")}
@@ -133,7 +133,7 @@ function TodoList({ todos, toggleTodo, deleteTodo }: TodoListProps) {
           </span>
 
           <span
-            className={`px-4 py-0.5 rounded-lg ${
+            className={`px-4 py-0.5 rounded-full ${
               filter === "open" ? "bg-mono-blue font-semibold" : ""
             } cursor-pointer transition-[1s] hover:font-semibold `}
             onClick={() => changeFilter("open")}
@@ -141,7 +141,7 @@ function TodoList({ todos, toggleTodo, deleteTodo }: TodoListProps) {
             Open
           </span>
           <span
-            className={`px-4 py-0.5 rounded-lg ${
+            className={`px-4 py-0.5 rounded-full ${
               filter === "completed" ? "bg-mono-blue font-semibold" : ""
             } cursor-pointer transition-[1s] hover:font-semibold `}
             onClick={() => changeFilter("completed")}
