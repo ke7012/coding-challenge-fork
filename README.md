@@ -13,6 +13,8 @@ This Vite React app project is a simple, modern flat themed To Do List.
 Users can add To Do tasks, mark/unmark them as completed and delete them.
 The user can filter the tasks for _Completed_, _Open_ and _All_ tasks.
 
+<img src="src/assets/Mono_Task.PNG" style="width:60%;"/>
+
 ## Setup
 
 Install Node and npm via https://nodejs.org/en/download.
@@ -34,7 +36,7 @@ npm run dev
 ```
 
 ## Review
-This was done in a span of 1 week and with close to 0 experience in React, Git and Typescript. It was both very fun and challenging.
+This was done in a span of 1 week and with little to no experience in React, Git and Typescript. It was both very fun and challenging.
 Further Improvements and Features that crossed my mind:
 - Toggle between Light/Dark Mode
 - Mobile View
